@@ -10,8 +10,7 @@ jobs:
     steps:
       - name: "📥  Fetching Repository Contents"
         uses: actions/checkout@main
-      - name: Setup PHP with pecl extension
-        uses: shivammathur/setup-php@v2
+      - uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
       - run: |
