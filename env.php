@@ -1,3 +1,3 @@
 <?php
 
-print_r($ENV);
+print_r($_ENV);
