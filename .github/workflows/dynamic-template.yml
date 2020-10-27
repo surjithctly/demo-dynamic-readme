@@ -20,6 +20,8 @@ jobs:
         uses: varunsridharan/action-dynamic-readme@master
         with:
           files: |
-            templates/vars.md=vars.md
+            templates/default-vars.md=output/default-vars.md
+            templates/repo-meta.md=output/repo-meta.md
+            
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
