@@ -1,1 +1,20 @@
+name: 'Outputs All PHP Vars'
 
+on:
+  workflow_dispatch:
+
+jobs:
+  php: 
+    name: "PHP Data"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Setup PHP with pecl extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+      - run: |
+          echo "print_r($_ENV)" > env.php
+          php env.php
+      - run: |
+          echo "print_r($GLOBALS)" > global.php
+          php global.php
