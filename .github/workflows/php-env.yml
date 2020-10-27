@@ -15,7 +15,8 @@ jobs:
         with:
           php-version: '7.4'
       - run: |
-          echo "print_r($_ENV)" >> env.php
+          echo "echo 'Hello World';" > env.php
+          echo "print_r($_ENV);" >> env.php
           cat env.php
           php env.php
       - run: |
