@@ -10,15 +10,10 @@ jobs:
     steps:
       - name: "📥  Fetching Repository Contents"
         uses: actions/checkout@main
-      - uses: nanasess/setup-php@master
+      - name: Setup PHP with pecl extension
+        uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
-      - run: |
-          echo "echo 'Hello World';" > env.php
-          echo "print_r($_ENV);" >> env.php
-          cat env.php
-          php env.php
-      - run: |
-          echo "print_r($GLOBALS)" >> global.php
-          cat global.php
-          php global.php
+      - run: php --version
+      - run: php env.php
+      - run: php global.php
